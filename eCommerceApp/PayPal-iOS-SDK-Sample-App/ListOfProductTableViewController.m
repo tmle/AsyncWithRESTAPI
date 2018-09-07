@@ -58,8 +58,6 @@
              
              products = mappingResult.array;
              [self.tableView reloadData];
-             //NSLog(@"mapping result count = %lu", (unsigned long)mappingResult.count);
-             //NSLog(@"products count = %lu", (unsigned long)products.count);
              
              // list of products are not in order, have to order it.
              NSMutableArray *unsortedArray = [[NSMutableArray alloc] init];
@@ -125,73 +123,6 @@
     
 } // end of method
 
-//- (NSMutableArray *)photos {
-//    if (!_photos) {
-//        // 1
-//        NSURL *datasourceURL = [NSURL URLWithString:kImageSourceURLString];
-//        NSURLRequest *request = [NSURLRequest requestWithURL:datasourceURL];
-//        
-//        // 2
-//        AFHTTPRequestOperation *datasource_download_operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//        
-//        // 3
-//        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-//        
-//        // 4
-//        [datasource_download_operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            
-//            // 5 CFPropertyListCreateFromXMLData
-//            NSData *datasource_data = (NSData *)responseObject;
-//            CFDictionaryRef plist = (CFPropertyListCreateWithData(kCFAllocatorDefault, CFBridgingRetain(datasource_data), kCFPropertyListImmutable, NULL, NULL));
-//
-//            //CFPropertyListRef plist = CFPropertyListCreateFromXMLData(kCFAllocatorDefault, (__bridge CFDataRef)datasource_data, kCFPropertyListImmutable, NULL); //kCFPropertyListXMLFormat_v1_0 ,NULL);
-//            
-//            //NSDictionary *datasource_dictionary = (__bridge NSDictionary *)plist;
-//            
-//            self.photos = tempRecord;
-//            CFRelease(plist);
-//            
-//            [self.tableView reloadData];
-//            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-//            // 8
-//            UIAlertController * alert=   [UIAlertController
-//                                          alertControllerWithTitle:@"Title"
-//                                          message:@"Message"
-//                                          preferredStyle:UIAlertControllerStyleAlert];
-//            
-//            UIAlertAction* yesButton = [UIAlertAction
-//                                        actionWithTitle:@"Yes, please"
-//                                        style:UIAlertActionStyleDefault
-//                                        handler:^(UIAlertAction * action)
-//                                        {
-//                                            [alert dismissViewControllerAnimated:YES completion:nil];
-//                                            
-//                                        }];
-//            UIAlertAction* noButton = [UIAlertAction
-//                                       actionWithTitle:@"No, thanks"
-//                                       style:UIAlertActionStyleDefault
-//                                       handler:^(UIAlertAction * action)
-//                                       {
-//                                           [alert dismissViewControllerAnimated:YES completion:nil];
-//                                           
-//                                       }];
-//            
-//            [alert addAction:yesButton];
-//            [alert addAction:noButton];
-//            
-//            [self presentViewController:alert animated:YES completion:nil];
-//            
-//            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-//        }];
-//        
-//        // 9
-//        [self.pendingOperations.downloadQueue addOperation:datasource_download_operation];
-//    }
-//
-//    return _photos;
-//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -208,15 +139,6 @@
         self.dictOfProductOnCart = [[NSMutableDictionary alloc] init];
     }
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:TRUE];
-//    
-//    [self photos];
-//    [self requestData]; // if coredata is used
-//    [self.tableView reloadData];
-//    
-//}
 
 - (void)viewDidUnload {
     [self setPhotos:nil];

@@ -23,7 +23,6 @@
 #import "ProductCell.h"
 #import "ProductSelected.h"
 
-// https://www.facebook.com/pandacat.chan/videos/10153565060417431/
 #define kThinhMLeBaseURL @"https://www.thinhmle.com"
 
 @interface ListOfProductTableViewController : UITableViewController <ImageDownloaderDelegate, ImageFiltrationDelegate>

@@ -25,16 +25,8 @@
     UIBarButtonItem * addToShoppingCartButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Add to Cart", nil) style:UIBarButtonItemStyleDone target:self action:@selector(addToShoppingCart:)];
     self.navigationItem.rightBarButtonItem = addToShoppingCartButton;
     
-//    UIBarButtonItem * addToShoppingCartButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Add to Cart", nil) style:UIBarButtonItemStyleDone target:self action:@selector(addToShoppingCart:)];
-//    self.navigationItem.rightBarButtonItem = addToShoppingCartButton;
-    
     self.navigationItem.title = @"Details";
     
-//    NSData *imageData     = [[NSData alloc] initWithContentsOfURL:self.recordSelected_t.recordImageURL];
-//        if (imageData) {
-//            self.prodImageOnDetail.image = [UIImage imageWithData:imageData];
-//        }
-
     PhotoRecord2 *aRecord = self.recordSelected_t;
     // 3
     if (aRecord.hasLargeImage) {

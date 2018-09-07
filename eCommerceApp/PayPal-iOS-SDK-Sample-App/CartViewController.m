@@ -285,12 +285,4 @@
     [UIView commitAnimations];
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"ShowShoppingCart"]) {
-//        DetailProductDescriptionViewController * detailProductDescriptionViewController = (DetailProductDescriptionViewController *)segue.destinationViewController;
-//        detailProductDescriptionViewController.listOfProductsSelected = self.listOfProductsSelected;
-//    }
-//}
-
 @end
